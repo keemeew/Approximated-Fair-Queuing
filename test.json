@@ -317,8 +317,8 @@
       "name" : "MyIngress.reg0",
       "id" : 0,
       "source_info" : {
-        "filename" : "test.p4",
-        "line" : 53,
+        "filename" : "approx_fair_queuing.p4",
+        "line" : 49,
         "column" : 27,
         "source_fragment" : "reg0"
       },
@@ -329,8 +329,8 @@
       "name" : "MyIngress.reg1",
       "id" : 1,
       "source_info" : {
-        "filename" : "test.p4",
-        "line" : 54,
+        "filename" : "approx_fair_queuing.p4",
+        "line" : 50,
         "column" : 27,
         "source_fragment" : "reg1"
       },
@@ -341,8 +341,8 @@
       "name" : "MyIngress.reg2",
       "id" : 2,
       "source_info" : {
-        "filename" : "test.p4",
-        "line" : 55,
+        "filename" : "approx_fair_queuing.p4",
+        "line" : 51,
         "column" : 27,
         "source_fragment" : "reg2"
       },
@@ -353,8 +353,8 @@
       "name" : "MyEgress.reg0",
       "id" : 3,
       "source_info" : {
-        "filename" : "test.p4",
-        "line" : 166,
+        "filename" : "approx_fair_queuing.p4",
+        "line" : 174,
         "column" : 27,
         "source_fragment" : "reg0"
       },
@@ -365,8 +365,8 @@
       "name" : "MyEgress.reg1",
       "id" : 4,
       "source_info" : {
-        "filename" : "test.p4",
-        "line" : 167,
+        "filename" : "approx_fair_queuing.p4",
+        "line" : 175,
         "column" : 27,
         "source_fragment" : "reg1"
       },
@@ -377,8 +377,8 @@
       "name" : "MyEgress.reg2",
       "id" : 5,
       "source_info" : {
-        "filename" : "test.p4",
-        "line" : 168,
+        "filename" : "approx_fair_queuing.p4",
+        "line" : 176,
         "column" : 27,
         "source_fragment" : "reg2"
       },
@@ -572,8 +572,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 58,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 54,
             "column" : 8,
             "source_fragment" : "mark_to_drop(standard_metadata)"
           }
@@ -598,8 +598,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 64,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -617,8 +617,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 82,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -636,8 +636,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 100,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -655,8 +655,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 117,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -674,8 +674,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 134,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -701,8 +701,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg0, HashAlgorithm.crc32, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -724,8 +724,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 168,
             "source_fragment" : "reg0.read(meta.value_reg0, meta.index_reg0)"
           }
@@ -766,8 +766,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 213,
             "source_fragment" : "meta.value_reg0 = meta.value_reg0 + 1"
           }
@@ -789,8 +789,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 62,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 58,
             "column" : 252,
             "source_fragment" : "reg0.write(meta.index_reg0, meta.value_reg0)"
           }
@@ -808,8 +808,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 64,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -827,8 +827,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 82,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -846,8 +846,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 100,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -865,8 +865,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 117,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -884,8 +884,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 134,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -911,8 +911,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg1, HashAlgorithm.crc16, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -934,8 +934,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 168,
             "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
           }
@@ -976,8 +976,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 213,
             "source_fragment" : "meta.value_reg1 = meta.value_reg1 + 1"
           }
@@ -999,8 +999,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 63,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 59,
             "column" : 252,
             "source_fragment" : "reg1.write(meta.index_reg1, meta.value_reg1)"
           }
@@ -1018,8 +1018,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 67,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -1037,8 +1037,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 85,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -1056,8 +1056,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 103,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -1075,8 +1075,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 120,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -1094,8 +1094,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 137,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -1121,8 +1121,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg2, HashAlgorithm.identity, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -1144,8 +1144,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 171,
             "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
           }
@@ -1186,8 +1186,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 216,
             "source_fragment" : "meta.value_reg2 = meta.value_reg2 + 1"
           }
@@ -1209,8 +1209,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 64,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 60,
             "column" : 255,
             "source_fragment" : "reg2.write(meta.index_reg2, meta.value_reg2)"
           }
@@ -1239,10 +1239,56 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 68,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 64,
             "column" : 8,
             "source_fragment" : "reg0.read(meta.value_reg0, meta.index_reg0)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_reg1"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.index_reg1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 65,
+            "column" : 8,
+            "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_reg2"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.reg2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.index_reg2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 66,
+            "column" : 8,
+            "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
           }
         },
         {
@@ -1257,35 +1303,173 @@
               "value" : {
                 "type" : "expression",
                 "value" : {
-                  "op" : "&",
+                  "op" : "?",
                   "left" : {
                     "type" : "expression",
                     "value" : {
-                      "op" : "+",
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "userMetadata.value_reg0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xfffffffffffffff6"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffffffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.value_reg0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">=",
                       "left" : {
                         "type" : "field",
                         "value" : ["scalars", "userMetadata.value_reg0"]
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0xfffffffffffffff6"
+                        "value" : "0x000000000000000a"
                       }
                     }
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffffffffffff"
                   }
                 }
               }
             }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 68,
-            "column" : 53,
-            "source_fragment" : "meta.value_reg0 = meta.value_reg0 - 10"
-          }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_reg1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "userMetadata.value_reg1"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xfffffffffffffff6"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffffffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.value_reg1"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">=",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.value_reg1"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x000000000000000a"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_reg2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "userMetadata.value_reg2"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xfffffffffffffff6"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffffffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.value_reg2"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">=",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.value_reg2"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x000000000000000a"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
         },
         {
           "op" : "register_write",
@@ -1304,78 +1488,13 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 68,
-            "column" : 93,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 76,
+            "column" : 8,
             "source_fragment" : "reg0.write(meta.index_reg0, meta.value_reg0)"
           }
         },
         {
-          "op" : "register_read",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.value_reg1"]
-            },
-            {
-              "type" : "register_array",
-              "value" : "MyIngress.reg1"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.index_reg1"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 69,
-            "column" : 8,
-            "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.value_reg1"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "expression",
-                    "value" : {
-                      "op" : "+",
-                      "left" : {
-                        "type" : "field",
-                        "value" : ["scalars", "userMetadata.value_reg1"]
-                      },
-                      "right" : {
-                        "type" : "hexstr",
-                        "value" : "0xfffffffffffffff6"
-                      }
-                    }
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffffffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 69,
-            "column" : 53,
-            "source_fragment" : "meta.value_reg1 = meta.value_reg1 - 10"
-          }
-        },
-        {
           "op" : "register_write",
           "parameters" : [
             {
@@ -1392,78 +1511,13 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 69,
-            "column" : 93,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 77,
+            "column" : 8,
             "source_fragment" : "reg1.write(meta.index_reg1, meta.value_reg1)"
           }
         },
         {
-          "op" : "register_read",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.value_reg2"]
-            },
-            {
-              "type" : "register_array",
-              "value" : "MyIngress.reg2"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.index_reg2"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 70,
-            "column" : 8,
-            "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.value_reg2"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "expression",
-                    "value" : {
-                      "op" : "+",
-                      "left" : {
-                        "type" : "field",
-                        "value" : ["scalars", "userMetadata.value_reg2"]
-                      },
-                      "right" : {
-                        "type" : "hexstr",
-                        "value" : "0xfffffffffffffff6"
-                      }
-                    }
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffffffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 70,
-            "column" : 53,
-            "source_fragment" : "meta.value_reg2 = meta.value_reg2 - 10"
-          }
-        },
-        {
           "op" : "register_write",
           "parameters" : [
             {
@@ -1480,9 +1534,9 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 70,
-            "column" : 93,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 78,
+            "column" : 8,
             "source_fragment" : "reg2.write(meta.index_reg2, meta.value_reg2)"
           }
         }
@@ -1723,7 +1777,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x0000000000000064"
+                        "value" : "0x0000000000000003"
                       }
                     }
                   }
@@ -1767,7 +1821,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000064"
+                            "value" : "0x0000000000000003"
                           }
                         }
                       },
@@ -1781,7 +1835,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x00000000000000c8"
+                            "value" : "0x0000000000000006"
                           }
                         }
                       }
@@ -1827,7 +1881,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x00000000000000c8"
+                            "value" : "0x0000000000000006"
                           }
                         }
                       },
@@ -1841,7 +1895,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x000000000000012c"
+                            "value" : "0x0000000000000009"
                           }
                         }
                       }
@@ -1887,7 +1941,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x000000000000012c"
+                            "value" : "0x0000000000000009"
                           }
                         }
                       },
@@ -1901,7 +1955,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000190"
+                            "value" : "0x000000000000000c"
                           }
                         }
                       }
@@ -1947,7 +2001,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000190"
+                            "value" : "0x000000000000000c"
                           }
                         }
                       },
@@ -1961,7 +2015,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x00000000000001f4"
+                            "value" : "0x000000000000000f"
                           }
                         }
                       }
@@ -2007,7 +2061,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x00000000000001f4"
+                            "value" : "0x000000000000000f"
                           }
                         }
                       },
@@ -2021,7 +2075,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000258"
+                            "value" : "0x0000000000000012"
                           }
                         }
                       }
@@ -2067,7 +2121,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000258"
+                            "value" : "0x0000000000000012"
                           }
                         }
                       },
@@ -2081,7 +2135,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x00000000000002bc"
+                            "value" : "0x0000000000000015"
                           }
                         }
                       }
@@ -2127,7 +2181,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x00000000000002bc"
+                            "value" : "0x0000000000000015"
                           }
                         }
                       },
@@ -2141,7 +2195,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000320"
+                            "value" : "0x0000000000000018"
                           }
                         }
                       }
@@ -2177,8 +2231,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 128,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 136,
             "column" : 8,
             "source_fragment" : "standard_metadata.egress_spec = egress_port"
           }
@@ -2186,7 +2240,7 @@
       ]
     },
     {
-      "name" : "test149",
+      "name" : "approx_fair_queuing157",
       "id" : 7,
       "runtime_data" : [],
       "primitives" : [
@@ -2203,8 +2257,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 149,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 157,
             "column" : 12,
             "source_fragment" : "standard_metadata.priority = meta.value_priority"
           }
@@ -2229,8 +2283,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 64,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -2248,8 +2302,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 82,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -2267,8 +2321,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 100,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -2286,8 +2340,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 117,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -2305,8 +2359,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 134,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -2332,8 +2386,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg0, HashAlgorithm.crc32, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -2355,8 +2409,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 168,
             "source_fragment" : "reg0.read(meta.value_reg0, meta.index_reg0)"
           }
@@ -2397,8 +2451,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 213,
             "source_fragment" : "meta.value_reg0 = meta.value_reg0 + 1"
           }
@@ -2420,8 +2474,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 171,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 179,
             "column" : 252,
             "source_fragment" : "reg0.write(meta.index_reg0, meta.value_reg0)"
           }
@@ -2439,8 +2493,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 64,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -2458,8 +2512,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 82,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -2477,8 +2531,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 100,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -2496,8 +2550,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 117,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -2515,8 +2569,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 134,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -2542,8 +2596,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg1, HashAlgorithm.crc16, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -2565,8 +2619,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 168,
             "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
           }
@@ -2607,8 +2661,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 213,
             "source_fragment" : "meta.value_reg1 = meta.value_reg1 + 1"
           }
@@ -2630,8 +2684,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 172,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 180,
             "column" : 252,
             "source_fragment" : "reg1.write(meta.index_reg1, meta.value_reg1)"
           }
@@ -2649,8 +2703,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 67,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -2668,8 +2722,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 85,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -2687,8 +2741,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 103,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -2706,8 +2760,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 120,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -2725,8 +2779,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 137,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -2752,8 +2806,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg2, HashAlgorithm.identity, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -2775,8 +2829,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 171,
             "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
           }
@@ -2817,8 +2871,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 216,
             "source_fragment" : "meta.value_reg2 = meta.value_reg2 + 1"
           }
@@ -2840,8 +2894,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 173,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 181,
             "column" : 255,
             "source_fragment" : "reg2.write(meta.index_reg2, meta.value_reg2)"
           }
@@ -2870,10 +2924,56 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 177,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 184,
             "column" : 8,
             "source_fragment" : "reg0.read(meta.value_reg0, meta.index_reg0)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_reg1"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.reg1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.index_reg1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 185,
+            "column" : 8,
+            "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_reg2"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.reg2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.index_reg2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 186,
+            "column" : 8,
+            "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
           }
         },
         {
@@ -2888,35 +2988,173 @@
               "value" : {
                 "type" : "expression",
                 "value" : {
-                  "op" : "&",
+                  "op" : "?",
                   "left" : {
                     "type" : "expression",
                     "value" : {
-                      "op" : "+",
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "userMetadata.value_reg0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xfffffffffffffff6"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffffffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.value_reg0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">=",
                       "left" : {
                         "type" : "field",
                         "value" : ["scalars", "userMetadata.value_reg0"]
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0xfffffffffffffff6"
+                        "value" : "0x000000000000000a"
                       }
                     }
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffffffffffff"
                   }
                 }
               }
             }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 177,
-            "column" : 53,
-            "source_fragment" : "meta.value_reg0 = meta.value_reg0 - 10"
-          }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_reg1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "userMetadata.value_reg1"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xfffffffffffffff6"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffffffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.value_reg1"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">=",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.value_reg1"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x000000000000000a"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_reg2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "userMetadata.value_reg2"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xfffffffffffffff6"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffffffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "userMetadata.value_reg2"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">=",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "userMetadata.value_reg2"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x000000000000000a"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
         },
         {
           "op" : "register_write",
@@ -2935,78 +3173,13 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 177,
-            "column" : 93,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 196,
+            "column" : 8,
             "source_fragment" : "reg0.write(meta.index_reg0, meta.value_reg0)"
           }
         },
         {
-          "op" : "register_read",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.value_reg1"]
-            },
-            {
-              "type" : "register_array",
-              "value" : "MyEgress.reg1"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.index_reg1"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 178,
-            "column" : 8,
-            "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.value_reg1"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "expression",
-                    "value" : {
-                      "op" : "+",
-                      "left" : {
-                        "type" : "field",
-                        "value" : ["scalars", "userMetadata.value_reg1"]
-                      },
-                      "right" : {
-                        "type" : "hexstr",
-                        "value" : "0xfffffffffffffff6"
-                      }
-                    }
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffffffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 178,
-            "column" : 53,
-            "source_fragment" : "meta.value_reg1 = meta.value_reg1 - 10"
-          }
-        },
-        {
           "op" : "register_write",
           "parameters" : [
             {
@@ -3023,78 +3196,13 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 178,
-            "column" : 93,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 197,
+            "column" : 8,
             "source_fragment" : "reg1.write(meta.index_reg1, meta.value_reg1)"
           }
         },
         {
-          "op" : "register_read",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.value_reg2"]
-            },
-            {
-              "type" : "register_array",
-              "value" : "MyEgress.reg2"
-            },
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.index_reg2"]
-            }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 179,
-            "column" : 8,
-            "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
-          }
-        },
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["scalars", "userMetadata.value_reg2"]
-            },
-            {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "&",
-                  "left" : {
-                    "type" : "expression",
-                    "value" : {
-                      "op" : "+",
-                      "left" : {
-                        "type" : "field",
-                        "value" : ["scalars", "userMetadata.value_reg2"]
-                      },
-                      "right" : {
-                        "type" : "hexstr",
-                        "value" : "0xfffffffffffffff6"
-                      }
-                    }
-                  },
-                  "right" : {
-                    "type" : "hexstr",
-                    "value" : "0xffffffffffffffff"
-                  }
-                }
-              }
-            }
-          ],
-          "source_info" : {
-            "filename" : "test.p4",
-            "line" : 179,
-            "column" : 53,
-            "source_fragment" : "meta.value_reg2 = meta.value_reg2 - 10"
-          }
-        },
-        {
           "op" : "register_write",
           "parameters" : [
             {
@@ -3111,9 +3219,9 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 179,
-            "column" : 93,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 198,
+            "column" : 8,
             "source_fragment" : "reg2.write(meta.index_reg2, meta.value_reg2)"
           }
         }
@@ -3319,29 +3427,10 @@
       ]
     },
     {
-      "name" : "test210",
+      "name" : "approx_fair_queuing229",
       "id" : 11,
       "runtime_data" : [],
       "primitives" : [
-        {
-          "op" : "assign",
-          "parameters" : [
-            {
-              "type" : "field",
-              "value" : ["ethernet", "etherType"]
-            },
-            {
-              "type" : "hexstr",
-              "value" : "0x1313"
-            }
-          ],
-          "source_info" : {
-            "filename" : "include/headers.p4",
-            "line" : 6,
-            "column" : 26,
-            "source_fragment" : "0x1313; ..."
-          }
-        },
         {
           "op" : "recirculate",
           "parameters" : [
@@ -3351,8 +3440,8 @@
             }
           ],
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 211,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 229,
             "column" : 12,
             "source_fragment" : "recirculate_preserving_field_list(0)"
           }
@@ -3365,8 +3454,8 @@
       "name" : "ingress",
       "id" : 0,
       "source_info" : {
-        "filename" : "test.p4",
-        "line" : 49,
+        "filename" : "approx_fair_queuing.p4",
+        "line" : 45,
         "column" : 8,
         "source_fragment" : "MyIngress"
       },
@@ -3376,8 +3465,8 @@
           "name" : "tbl_sketch_count",
           "id" : 0,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 146,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 154,
             "column" : 12,
             "source_fragment" : "sketch_count()"
           },
@@ -3405,8 +3494,8 @@
           "name" : "tbl_retrieve_min",
           "id" : 1,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 147,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 155,
             "column" : 12,
             "source_fragment" : "retrieve_min()"
           },
@@ -3434,8 +3523,8 @@
           "name" : "tbl_calculate_priority",
           "id" : 2,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 148,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 156,
             "column" : 12,
             "source_fragment" : "calculate_priority()"
           },
@@ -3448,9 +3537,9 @@
           "direct_meters" : null,
           "action_ids" : [5],
           "actions" : ["MyIngress.calculate_priority"],
-          "base_default_next" : "tbl_test149",
+          "base_default_next" : "tbl_approx_fair_queuing157",
           "next_tables" : {
-            "MyIngress.calculate_priority" : "tbl_test149"
+            "MyIngress.calculate_priority" : "tbl_approx_fair_queuing157"
           },
           "default_entry" : {
             "action_id" : 5,
@@ -3460,11 +3549,11 @@
           }
         },
         {
-          "name" : "tbl_test149",
+          "name" : "tbl_approx_fair_queuing157",
           "id" : 3,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 149,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 157,
             "column" : 39,
             "source_fragment" : "="
           },
@@ -3476,10 +3565,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [7],
-          "actions" : ["test149"],
+          "actions" : ["approx_fair_queuing157"],
           "base_default_next" : "MyIngress.forwarding",
           "next_tables" : {
-            "test149" : "MyIngress.forwarding"
+            "approx_fair_queuing157" : "MyIngress.forwarding"
           },
           "default_entry" : {
             "action_id" : 7,
@@ -3492,8 +3581,8 @@
           "name" : "tbl_dequeue_count",
           "id" : 4,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 151,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 159,
             "column" : 12,
             "source_fragment" : "dequeue_count()"
           },
@@ -3521,8 +3610,8 @@
           "name" : "MyIngress.forwarding",
           "id" : 5,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 131,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 139,
             "column" : 10,
             "source_fragment" : "forwarding"
           },
@@ -3562,8 +3651,8 @@
           "name" : "node_2",
           "id" : 0,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 145,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 153,
             "column" : 12,
             "source_fragment" : "standard_metadata.instance_type != 4"
           },
@@ -3590,8 +3679,8 @@
       "name" : "egress",
       "id" : 1,
       "source_info" : {
-        "filename" : "test.p4",
-        "line" : 162,
+        "filename" : "approx_fair_queuing.p4",
+        "line" : 170,
         "column" : 8,
         "source_fragment" : "MyEgress"
       },
@@ -3601,8 +3690,8 @@
           "name" : "tbl_sketch_count_0",
           "id" : 6,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 205,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 224,
             "column" : 12,
             "source_fragment" : "sketch_count()"
           },
@@ -3630,8 +3719,8 @@
           "name" : "tbl_retrieve_min_0",
           "id" : 7,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 206,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 225,
             "column" : 12,
             "source_fragment" : "retrieve_min()"
           },
@@ -3656,13 +3745,13 @@
           }
         },
         {
-          "name" : "tbl_test210",
+          "name" : "tbl_approx_fair_queuing229",
           "id" : 8,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 210,
-            "column" : 35,
-            "source_fragment" : "= TYPE_SYNC; ..."
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 229,
+            "column" : 12,
+            "source_fragment" : "recirculate_preserving_field_list(0)"
           },
           "key" : [],
           "match_type" : "exact",
@@ -3672,10 +3761,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [11],
-          "actions" : ["test210"],
+          "actions" : ["approx_fair_queuing229"],
           "base_default_next" : "tbl_reg_reset",
           "next_tables" : {
-            "test210" : "tbl_reg_reset"
+            "approx_fair_queuing229" : "tbl_reg_reset"
           },
           "default_entry" : {
             "action_id" : 11,
@@ -3688,8 +3777,8 @@
           "name" : "tbl_reg_reset",
           "id" : 9,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 212,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 230,
             "column" : 12,
             "source_fragment" : "reg_reset()"
           },
@@ -3720,10 +3809,10 @@
           "name" : "node_11",
           "id" : 1,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 204,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 223,
             "column" : 12,
-            "source_fragment" : "hdr.ethernet.etherType != TYPE_SYNC"
+            "source_fragment" : "standard_metadata.instance_type != 4"
           },
           "expression" : {
             "type" : "expression",
@@ -3731,11 +3820,11 @@
               "op" : "!=",
               "left" : {
                 "type" : "field",
-                "value" : ["ethernet", "etherType"]
+                "value" : ["standard_metadata", "instance_type"]
               },
               "right" : {
                 "type" : "hexstr",
-                "value" : "0x1313"
+                "value" : "0x00000004"
               }
             }
           },
@@ -3746,8 +3835,8 @@
           "name" : "node_14",
           "id" : 2,
           "source_info" : {
-            "filename" : "test.p4",
-            "line" : 209,
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 228,
             "column" : 12,
             "source_fragment" : "meta.value_min >= 10"
           },
@@ -3766,7 +3855,7 @@
             }
           },
           "false_next" : null,
-          "true_next" : "tbl_test210"
+          "true_next" : "tbl_approx_fair_queuing229"
         }
       ]
     }
@@ -3816,7 +3905,7 @@
       ["standard_metadata", "egress_rid"]
     ]
   ],
-  "program" : "test.p4",
+  "program" : "approx_fair_queuing.p4",
   "__meta__" : {
     "version" : [2, 23],
     "compiler" : "https://github.com/p4lang/p4c"

@@ -1,7 +1,7 @@
 {termimal1}
-p4c-bm2-ss --p4v 16 test.p4 -o test.json
+p4c-bm2-ss --p4v 16 approx_fair_queuing.p4 -o test.json
 sudo simple_switch -i 0@veth0 -i 1@veth2 --log-console --thrift-port 9090 test.json
 
 {terminal2}
 sudo simple_switch_CLI --thrift-port 9090 < rule.txt
-sudo python3 send.py --n-pkt 1 --n-hh 10 --n-sfw 990 --p-hh 0.95
+sudo python3 send.py

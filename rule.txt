@@ -1,1 +1,2 @@
 table_add forwarding set_egress_port 0 => 1
+table_add forwarding set_egress_port 1 => 0

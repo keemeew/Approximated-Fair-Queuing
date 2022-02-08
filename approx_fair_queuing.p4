@@ -8,7 +8,7 @@
 /* CONSTANTS */
 #define SKETCH_BUCKET_LENGTH 100
 #define SKETCH_CELL_BIT_WIDTH 64
-#define ROUND_SIZE 100
+#define ROUND_SIZE 3
 #define RECIRCULATE_THRESH 10
 #define PKT_INSTANCE_TYPE_INGRESS_RECIRC 4
 
@@ -24,10 +24,6 @@
 hash(meta.index_reg##num, HashAlgorithm.algorithm, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
 reg##num.read(meta.value_reg##num, meta.index_reg##num); \
 meta.value_reg##num = meta.value_reg##num + 1; \
-reg##num.write(meta.index_reg##num, meta.value_reg##num)
-#define DEQUE_COUNT(num) \
-reg##num.read(meta.value_reg##num, meta.index_reg##num); \
-meta.value_reg##num = meta.value_reg##num - RECIRCULATE_THRESH; \
 reg##num.write(meta.index_reg##num, meta.value_reg##num)
 #define REG_RESET(num) \
 reg##num.read(meta.value_reg##num, meta.index_reg##num); \
@@ -65,9 +61,21 @@ control MyIngress(inout headers hdr,
     }
 
     action dequeue_count(){
-        DEQUE_COUNT(0);
-        DEQUE_COUNT(1);
-        DEQUE_COUNT(2);
+        reg0.read(meta.value_reg0, meta.index_reg0);
+        reg1.read(meta.value_reg1, meta.index_reg1);
+        reg2.read(meta.value_reg2, meta.index_reg2);
+        if (meta.value_reg0 >= RECIRCULATE_THRESH){
+            meta.value_reg0 = meta.value_reg0 - RECIRCULATE_THRESH;
+        }
+        if (meta.value_reg1 >= RECIRCULATE_THRESH){
+            meta.value_reg1 = meta.value_reg1 - RECIRCULATE_THRESH;
+        }
+        if (meta.value_reg2 >= RECIRCULATE_THRESH){
+            meta.value_reg2 = meta.value_reg2 - RECIRCULATE_THRESH;
+        }
+        reg0.write(meta.index_reg0, meta.value_reg0);
+        reg1.write(meta.index_reg1, meta.value_reg1);
+        reg2.write(meta.index_reg2, meta.value_reg2);
     }
 
     action retrieve_min(){
@@ -172,11 +180,22 @@ control MyEgress(inout headers hdr,
         SKETCH_COUNT(1, crc16);
         SKETCH_COUNT(2, identity);
     }
-
     action reg_reset(){
-        REG_RESET(0);
-        REG_RESET(1);
-        REG_RESET(2);
+        reg0.read(meta.value_reg0, meta.index_reg0);
+        reg1.read(meta.value_reg1, meta.index_reg1);
+        reg2.read(meta.value_reg2, meta.index_reg2);
+        if (meta.value_reg0 >= RECIRCULATE_THRESH){
+            meta.value_reg0 = meta.value_reg0 - RECIRCULATE_THRESH;
+        }
+        if (meta.value_reg1 >= RECIRCULATE_THRESH){
+            meta.value_reg1 = meta.value_reg1 - RECIRCULATE_THRESH;
+        }
+        if (meta.value_reg2 >= RECIRCULATE_THRESH){
+            meta.value_reg2 = meta.value_reg2 - RECIRCULATE_THRESH;
+        }
+        reg0.write(meta.index_reg0, meta.value_reg0);
+        reg1.write(meta.index_reg1, meta.value_reg1);
+        reg2.write(meta.index_reg2, meta.value_reg2);
     }
 
     action retrieve_min(){
@@ -201,13 +220,12 @@ control MyEgress(inout headers hdr,
 
     apply {  
            
-        if (hdr.ethernet.etherType != TYPE_SYNC){
+        if (standard_metadata.instance_type != PKT_INSTANCE_TYPE_INGRESS_RECIRC){
             sketch_count();
             retrieve_min(); 
         }     
 
         if (meta.value_min >= RECIRCULATE_THRESH){
-            hdr.ethernet.etherType = TYPE_SYNC;
             recirculate_preserving_field_list(0);   
             reg_reset(); 
         }

@@ -10,13 +10,13 @@ typedef bit<48> macAddr_t;
 typedef bit<32> ip4Addr_t;
 
 
-header ethernet_t {
+@field_list(0) header ethernet_t {
     macAddr_t dstAddr;
     macAddr_t srcAddr;
     bit<16>   etherType;
 }
 
-header ipv4_t {
+@field_list(0) header ipv4_t {
     bit<4>    version;
     bit<4>    ihl;
     bit<6>    dscp;
@@ -26,15 +26,15 @@ header ipv4_t {
     bit<3>    flags;
     bit<13>   fragOffset;
     bit<8>    ttl;
-    bit<8>    protocol;
+    @field_list(0) bit<8>    protocol;
     bit<16>   hdrChecksum;
-    ip4Addr_t srcAddr;
-    ip4Addr_t dstAddr;
+    @field_list(0) ip4Addr_t srcAddr;
+    @field_list(0) ip4Addr_t dstAddr;
 }
 
 header tcp_t{
-    bit<16> srcPort;
-    bit<16> dstPort;
+    @field_list(0) bit<16> srcPort;
+    @field_list(0) bit<16> dstPort;
     bit<32> seqNo;
     bit<32> ackNo;
     bit<4>  dataOffset;
