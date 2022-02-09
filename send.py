@@ -6,10 +6,12 @@ import matplotlib.pyplot as plt
 
 spkt = []
 five_tuple = []
-srcpkt = rdpcap("/home/keemee/fair_queuing/dataset_00000_20091218012604.pcap")
+cnt = 0
+srcpkt = rdpcap("/home/keemee/Approximated-Fair-Queuing/dataset_00000_20091218012604.pcap")
 f = open("flow_start.txt",'w')
 
 for i in range (0,len(srcpkt)):
+    cnt += 1
     srcAddr = srcpkt[i][IP].src
     dstAddr = srcpkt[i][IP].dst
     srcport = srcpkt[i][TCP].sport
@@ -17,7 +19,7 @@ for i in range (0,len(srcpkt)):
     tuple_data = (srcAddr,dstAddr,srcport,dstport)
     if tuple_data not in five_tuple:
         five_tuple.append(tuple_data)
-    pkt = Ether() / IP(src=srcAddr, dst=dstAddr) / TCP(sport=srcport, dport=dstport, seq=1) / 'hello world!'
+    pkt = Ether() / IP(src=srcAddr, dst=dstAddr) / TCP(sport=srcport, dport=dstport, seq=cnt) / 'hello world!'
     spkt.append(pkt)
 
 for i in range(0,len(spkt)): 

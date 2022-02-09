@@ -5,8 +5,8 @@ import sys
 import matplotlib.pyplot as plt
 
 def handle_pkt(packet):
-    print(packet.show())
     if TCP in packet:
+        print(packet[TCP].seq)
         protocol = packet.proto
         srcAddr = packet[IP].src
         dstAddr = packet[IP].dst
@@ -21,7 +21,7 @@ def handle_pkt(packet):
                     flowlist[k][2] = time.time()
 
 f = open("flow_end.txt",'w')
-pkts = rdpcap("/home/keemee/fair_queuing/dataset_00000_20091218012604.pcap")
+pkts = rdpcap("/home/keemee/Approximated-Fair-Queuing/dataset_00000_20091218012604.pcap")
 
 global flowlist, cplist, FCT
 
