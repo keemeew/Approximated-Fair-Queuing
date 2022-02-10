@@ -9,14 +9,9 @@
 #define SKETCH_BUCKET_LENGTH 100
 #define SKETCH_CELL_BIT_WIDTH 64
 #define ROUND_SIZE 3
-#define RECIRCULATE_THRESH 10
+#define RECIRCULATE_THRESH 3
+#define PKT_INSTANCE_TYPE_EGRESS_CLONE 2
 #define PKT_INSTANCE_TYPE_INGRESS_RECIRC 4
-
-/* GRAMMAR */
-// register<T>(bit<32> instance_count) register_name
-// hash(register_position, HashAlgorithm, HASH_BASE, values, HASH_MAX)
-// register_name.write(register_position, values)
-// register_name.read(readvalue, register_position)
 
 #define REGISTER(num) register<bit<SKETCH_CELL_BIT_WIDTH>>(SKETCH_BUCKET_LENGTH) reg##num
 #define FIVE_TUPLE {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}
@@ -154,11 +149,12 @@ control MyIngress(inout headers hdr,
             sketch_count();
             retrieve_min();
             calculate_priority();
-            standard_metadata.priority = meta.value_priority;
+            //standard_metadata.priority = meta.value_priority;
+            standard_metadata.priority = (bit<3>) 0;
         } else {
             dequeue_count();
+            mark_to_drop(standard_metadata);
         }
-
         forwarding.apply();
     }
 }
@@ -220,13 +216,14 @@ control MyEgress(inout headers hdr,
 
     apply {  
            
-        if (standard_metadata.instance_type != PKT_INSTANCE_TYPE_INGRESS_RECIRC){
+        if (standard_metadata.instance_type != PKT_INSTANCE_TYPE_INGRESS_RECIRC && standard_metadata.instance_type != PKT_INSTANCE_TYPE_EGRESS_CLONE){
             sketch_count();
             retrieve_min(); 
         }     
 
         if (meta.value_min >= RECIRCULATE_THRESH){
-            recirculate_preserving_field_list(0);   
+            //clone_preserving_field_list(CloneType.E2E, 5, 0);  
+            //recirculate_preserving_field_list(0);
             reg_reset(); 
         }
     }

@@ -10,13 +10,13 @@ typedef bit<48> macAddr_t;
 typedef bit<32> ip4Addr_t;
 
 
-@field_list(0) header ethernet_t {
+header ethernet_t {
     macAddr_t dstAddr;
     macAddr_t srcAddr;
     bit<16>   etherType;
 }
 
-@field_list(0) header ipv4_t {
+header ipv4_t {
     bit<4>    version;
     bit<4>    ihl;
     bit<6>    dscp;
