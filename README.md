@@ -7,7 +7,9 @@ This is simple implementation of Approximated Fair Queuing (NSDI' 18) on P4 v1mo
 To run the code, basic dependencies such as Bmv2 and p4c should be installed. In addition, this code uses strict priority queue on v1model, which requires several modiifications and recompilation of the Bmv2 and p4c backends. I post links for detailed information below.
 
 Bmv2: https://github.com/p4lang/behavioral-model
+
 p4c: https://github.com/p4lang/p4c
+
 Instructions for priority queuing: https://github.com/nsg-ethz/p4-learning/tree/master/examples/multiqueueing
 
 ## Instructions
