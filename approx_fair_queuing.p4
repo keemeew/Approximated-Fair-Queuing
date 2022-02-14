@@ -12,14 +12,7 @@
 #define RECIRCULATE_THRESH 100000
 #define PKT_INSTANCE_TYPE_EGRESS_CLONE 2
 #define PKT_INSTANCE_TYPE_INGRESS_RECIRC 4
-
-#define REGISTER(num) register<bit<SKETCH_CELL_BIT_WIDTH>>(SKETCH_BUCKET_LENGTH) reg##num
 #define FIVE_TUPLE {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}
-#define SKETCH_COUNT(num, algorithm) \
-hash(meta.index_reg##num, HashAlgorithm.algorithm, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
-reg##num.read(meta.value_reg##num, meta.index_reg##num); \
-meta.value_reg##num = meta.value_reg##num + 1; \
-reg##num.write(meta.index_reg##num, meta.value_reg##num)
 
 /*************************************************************************
 ************   C H E C K S U M    V E R I F I C A T I O N   *************
@@ -104,28 +97,28 @@ control MyIngress(inout headers hdr,
 
     action calculate_priority(){
         if (meta.value_min < ROUND_SIZE){
-            meta.value_priority = 0;
+            meta.value_priority = 7;
         } 
         if (meta.value_min >= ROUND_SIZE && meta.value_min < 2*ROUND_SIZE){
-            meta.value_priority = 1;
-        } 
-        if (meta.value_min >= 2*ROUND_SIZE && meta.value_min < 3*ROUND_SIZE){
-            meta.value_priority = 2;
-        } 
-        if (meta.value_min >= 3*ROUND_SIZE && meta.value_min < 4*ROUND_SIZE){
-            meta.value_priority = 3;
-        } 
-        if (meta.value_min >= 4*ROUND_SIZE && meta.value_min < 5*ROUND_SIZE){
-            meta.value_priority = 4;
-        } 
-        if (meta.value_min >= 5*ROUND_SIZE && meta.value_min < 6*ROUND_SIZE){
-            meta.value_priority = 5;
-        } 
-        if (meta.value_min >= 6*ROUND_SIZE && meta.value_min < 7*ROUND_SIZE){
             meta.value_priority = 6;
         } 
+        if (meta.value_min >= 2*ROUND_SIZE && meta.value_min < 3*ROUND_SIZE){
+            meta.value_priority = 5;
+        } 
+        if (meta.value_min >= 3*ROUND_SIZE && meta.value_min < 4*ROUND_SIZE){
+            meta.value_priority = 4;
+        } 
+        if (meta.value_min >= 4*ROUND_SIZE && meta.value_min < 5*ROUND_SIZE){
+            meta.value_priority = 3;
+        } 
+        if (meta.value_min >= 5*ROUND_SIZE && meta.value_min < 6*ROUND_SIZE){
+            meta.value_priority = 2;
+        } 
+        if (meta.value_min >= 6*ROUND_SIZE && meta.value_min < 7*ROUND_SIZE){
+            meta.value_priority = 1;
+        } 
         if (meta.value_min >= 7*ROUND_SIZE && meta.value_min < 8*ROUND_SIZE){
-            meta.value_priority = 7;
+            meta.value_priority = 0;
         } 
     }
 
@@ -152,7 +145,6 @@ control MyIngress(inout headers hdr,
             retrieve_min();
             calculate_priority();
             standard_metadata.priority = meta.value_priority;
-            //standard_metadata.priority = (bit<3>) 0;
         } else {
             dequeue_count();
             mark_to_drop(standard_metadata);

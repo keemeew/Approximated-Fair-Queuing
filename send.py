@@ -22,11 +22,7 @@ if dst == "10.10.0.1":
     pps = 200
     wait_time = 0
     veth = 'veth0'
-elif dst == "10.10.0.3":
-    num = 450
-    pps = 200
-    wait_time = 1.2
-else:
+elif dst == "10.10.0.2":
     num = 100
     pps = 100
     wait_time = 3

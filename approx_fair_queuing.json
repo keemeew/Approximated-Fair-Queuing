@@ -3995,7 +3995,7 @@
       ["standard_metadata", "egress_rid"]
     ]
   ],
-  "program" : "approx_fair_queuing.p4",
+  "program" : "./approx_fair_queuing.p4i",
   "__meta__" : {
     "version" : [2, 23],
     "compiler" : "https://github.com/p4lang/p4c"
