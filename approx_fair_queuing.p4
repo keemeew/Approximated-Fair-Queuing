@@ -8,8 +8,8 @@
 /* CONSTANTS */
 #define SKETCH_BUCKET_LENGTH 100
 #define SKETCH_CELL_BIT_WIDTH 64
-#define ROUND_SIZE 3
-#define RECIRCULATE_THRESH 3
+#define ROUND_SIZE 100
+#define RECIRCULATE_THRESH 100000
 #define PKT_INSTANCE_TYPE_EGRESS_CLONE 2
 #define PKT_INSTANCE_TYPE_INGRESS_RECIRC 4
 
@@ -19,10 +19,6 @@
 hash(meta.index_reg##num, HashAlgorithm.algorithm, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
 reg##num.read(meta.value_reg##num, meta.index_reg##num); \
 meta.value_reg##num = meta.value_reg##num + 1; \
-reg##num.write(meta.index_reg##num, meta.value_reg##num)
-#define REG_RESET(num) \
-reg##num.read(meta.value_reg##num, meta.index_reg##num); \
-meta.value_reg##num = meta.value_reg##num - RECIRCULATE_THRESH; \
 reg##num.write(meta.index_reg##num, meta.value_reg##num)
 
 /*************************************************************************
@@ -41,18 +37,31 @@ control MyIngress(inout headers hdr,
                   inout metadata meta,
                   inout standard_metadata_t standard_metadata) {
 
-    REGISTER(0);
-    REGISTER(1);
-    REGISTER(2);
+    //Set registers 0-3
+    register<bit<SKETCH_CELL_BIT_WIDTH>>(SKETCH_BUCKET_LENGTH) reg0;
+    register<bit<SKETCH_CELL_BIT_WIDTH>>(SKETCH_BUCKET_LENGTH) reg1;
+    register<bit<SKETCH_CELL_BIT_WIDTH>>(SKETCH_BUCKET_LENGTH) reg2;
 
     action drop() {
         mark_to_drop(standard_metadata);
     }
     
     action sketch_count(){
-        SKETCH_COUNT(0, crc32);
-        SKETCH_COUNT(1, crc16);
-        SKETCH_COUNT(2, identity);
+        //CMS for reg0
+        hash(meta.index_reg0, HashAlgorithm.crc32, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
+        reg0.read(meta.value_reg0, meta.index_reg0); \
+        meta.value_reg0 = meta.value_reg0 + 1; \
+        reg0.write(meta.index_reg0, meta.value_reg0); \
+        //CMS for reg1
+        hash(meta.index_reg1, HashAlgorithm.crc16, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
+        reg1.read(meta.value_reg1, meta.index_reg1); \
+        meta.value_reg1 = meta.value_reg1 + 1; \
+        reg1.write(meta.index_reg1, meta.value_reg1); \
+        //CMS for reg2
+        hash(meta.index_reg2, HashAlgorithm.identity, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
+        reg2.read(meta.value_reg2, meta.index_reg2); \
+        meta.value_reg2 = meta.value_reg2 + 1; \
+        reg2.write(meta.index_reg2, meta.value_reg2);
     }
 
     action dequeue_count(){
@@ -97,31 +106,24 @@ control MyIngress(inout headers hdr,
         if (meta.value_min < ROUND_SIZE){
             meta.value_priority = 0;
         } 
-
         if (meta.value_min >= ROUND_SIZE && meta.value_min < 2*ROUND_SIZE){
             meta.value_priority = 1;
         } 
-
         if (meta.value_min >= 2*ROUND_SIZE && meta.value_min < 3*ROUND_SIZE){
             meta.value_priority = 2;
         } 
-
         if (meta.value_min >= 3*ROUND_SIZE && meta.value_min < 4*ROUND_SIZE){
             meta.value_priority = 3;
         } 
-        
         if (meta.value_min >= 4*ROUND_SIZE && meta.value_min < 5*ROUND_SIZE){
             meta.value_priority = 4;
         } 
-
         if (meta.value_min >= 5*ROUND_SIZE && meta.value_min < 6*ROUND_SIZE){
             meta.value_priority = 5;
         } 
-
         if (meta.value_min >= 6*ROUND_SIZE && meta.value_min < 7*ROUND_SIZE){
             meta.value_priority = 6;
         } 
-
         if (meta.value_min >= 7*ROUND_SIZE && meta.value_min < 8*ROUND_SIZE){
             meta.value_priority = 7;
         } 
@@ -133,7 +135,7 @@ control MyIngress(inout headers hdr,
 
     table forwarding {
         key = {
-            standard_metadata.ingress_port: exact;
+            hdr.ipv4.dstAddr: exact;
         }
         actions = {
             set_egress_port;
@@ -149,8 +151,8 @@ control MyIngress(inout headers hdr,
             sketch_count();
             retrieve_min();
             calculate_priority();
-            //standard_metadata.priority = meta.value_priority;
-            standard_metadata.priority = (bit<3>) 0;
+            standard_metadata.priority = meta.value_priority;
+            //standard_metadata.priority = (bit<3>) 0;
         } else {
             dequeue_count();
             mark_to_drop(standard_metadata);
@@ -167,16 +169,29 @@ control MyEgress(inout headers hdr,
                  inout metadata meta,
                  inout standard_metadata_t standard_metadata) {
 
-    REGISTER(0);
-    REGISTER(1);
-    REGISTER(2);
-
+    register<bit<SKETCH_CELL_BIT_WIDTH>>(SKETCH_BUCKET_LENGTH) reg0;
+    register<bit<SKETCH_CELL_BIT_WIDTH>>(SKETCH_BUCKET_LENGTH) reg1;
+    register<bit<SKETCH_CELL_BIT_WIDTH>>(SKETCH_BUCKET_LENGTH) reg2;
+    
     action sketch_count(){
-        SKETCH_COUNT(0, crc32);
-        SKETCH_COUNT(1, crc16);
-        SKETCH_COUNT(2, identity);
+        //CMS for reg0
+        hash(meta.index_reg0, HashAlgorithm.crc32, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
+        reg0.read(meta.value_reg0, meta.index_reg0); \
+        meta.value_reg0 = meta.value_reg0 + 1; \
+        reg0.write(meta.index_reg0, meta.value_reg0); \
+        //CMS for reg1
+        hash(meta.index_reg1, HashAlgorithm.crc16, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
+        reg1.read(meta.value_reg1, meta.index_reg1); \
+        meta.value_reg1 = meta.value_reg1 + 1; \
+        reg1.write(meta.index_reg1, meta.value_reg1); \
+        //CMS for reg2
+        hash(meta.index_reg2, HashAlgorithm.identity, (bit<16>)0, FIVE_TUPLE, (bit<32>)SKETCH_BUCKET_LENGTH);\
+        reg2.read(meta.value_reg2, meta.index_reg2); \
+        meta.value_reg2 = meta.value_reg2 + 1; \
+        reg2.write(meta.index_reg2, meta.value_reg2);
     }
-    action reg_reset(){
+
+    action dequeue_count(){
         reg0.read(meta.value_reg0, meta.index_reg0);
         reg1.read(meta.value_reg1, meta.index_reg1);
         reg2.read(meta.value_reg2, meta.index_reg2);
@@ -214,17 +229,17 @@ control MyEgress(inout headers hdr,
         }
     }
 
-    apply {  
-           
-        if (standard_metadata.instance_type != PKT_INSTANCE_TYPE_INGRESS_RECIRC && standard_metadata.instance_type != PKT_INSTANCE_TYPE_EGRESS_CLONE){
+    apply { 
+        if (standard_metadata.instance_type != PKT_INSTANCE_TYPE_INGRESS_RECIRC \
+        && standard_metadata.instance_type != PKT_INSTANCE_TYPE_EGRESS_CLONE){
             sketch_count();
             retrieve_min(); 
         }     
 
         if (meta.value_min >= RECIRCULATE_THRESH){
-            //clone_preserving_field_list(CloneType.E2E, 5, 0);  
-            //recirculate_preserving_field_list(0);
-            reg_reset(); 
+            clone_preserving_field_list(CloneType.E2E, 5, 0);  
+            recirculate_preserving_field_list(0);
+            dequeue_count(); 
         }
     }
 }

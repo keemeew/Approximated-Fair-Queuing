@@ -1,2 +1,3 @@
-table_add forwarding set_egress_port 2 => 1
+table_add forwarding set_egress_port 10.10.0.1 => 2
+table_add forwarding set_egress_port 10.10.0.2 => 2
 mirroring_add 5 1

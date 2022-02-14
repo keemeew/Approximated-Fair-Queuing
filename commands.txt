@@ -5,8 +5,9 @@ sudo simple_switch -i 0@veth0 -i 1@veth2 -i 2@veth4 --log-console --thrift-port 
 
 {terminal2}
 sudo simple_switch_CLI --thrift-port 9090 < rule.txt
-sudo python3 send.py
+sudo python3 send.py --dst "10.10.0.1"
+sudo python3 send.py --dst "10.10.0.2"
 
-{terminal2}
+///{terminal2}
 sudo python3 receive.py --nic veth2 (receiver) 
 sudo python3 receive.py --nic veth4 (sender)

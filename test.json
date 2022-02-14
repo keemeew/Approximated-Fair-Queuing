@@ -318,7 +318,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "approx_fair_queuing.p4",
-        "line" : 44,
+        "line" : 41,
         "column" : 27,
         "source_fragment" : "reg0"
       },
@@ -330,7 +330,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "approx_fair_queuing.p4",
-        "line" : 45,
+        "line" : 42,
         "column" : 27,
         "source_fragment" : "reg1"
       },
@@ -342,7 +342,7 @@
       "id" : 2,
       "source_info" : {
         "filename" : "approx_fair_queuing.p4",
-        "line" : 46,
+        "line" : 43,
         "column" : 27,
         "source_fragment" : "reg2"
       },
@@ -354,7 +354,7 @@
       "id" : 3,
       "source_info" : {
         "filename" : "approx_fair_queuing.p4",
-        "line" : 170,
+        "line" : 172,
         "column" : 27,
         "source_fragment" : "reg0"
       },
@@ -366,7 +366,7 @@
       "id" : 4,
       "source_info" : {
         "filename" : "approx_fair_queuing.p4",
-        "line" : 171,
+        "line" : 173,
         "column" : 27,
         "source_fragment" : "reg1"
       },
@@ -378,7 +378,7 @@
       "id" : 5,
       "source_info" : {
         "filename" : "approx_fair_queuing.p4",
-        "line" : 172,
+        "line" : 174,
         "column" : 27,
         "source_fragment" : "reg2"
       },
@@ -573,7 +573,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 49,
+            "line" : 46,
             "column" : 8,
             "source_fragment" : "mark_to_drop(standard_metadata)"
           }
@@ -599,7 +599,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
+            "line" : 51,
             "column" : 64,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -618,7 +618,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
+            "line" : 51,
             "column" : 82,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -637,7 +637,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
+            "line" : 51,
             "column" : 100,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -656,7 +656,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
+            "line" : 51,
             "column" : 117,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -675,7 +675,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
+            "line" : 51,
             "column" : 134,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -702,7 +702,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
+            "line" : 51,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg0, HashAlgorithm.crc32, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -725,8 +725,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
-            "column" : 168,
+            "line" : 51,
+            "column" : 169,
             "source_fragment" : "reg0.read(meta.value_reg0, meta.index_reg0)"
           }
         },
@@ -767,8 +767,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
-            "column" : 213,
+            "line" : 51,
+            "column" : 214,
             "source_fragment" : "meta.value_reg0 = meta.value_reg0 + 1"
           }
         },
@@ -790,8 +790,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 53,
-            "column" : 252,
+            "line" : 51,
+            "column" : 253,
             "source_fragment" : "reg0.write(meta.index_reg0, meta.value_reg0)"
           }
         },
@@ -809,7 +809,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
+            "line" : 56,
             "column" : 64,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -828,7 +828,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
+            "line" : 56,
             "column" : 82,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -847,7 +847,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
+            "line" : 56,
             "column" : 100,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -866,7 +866,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
+            "line" : 56,
             "column" : 117,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -885,7 +885,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
+            "line" : 56,
             "column" : 134,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -912,7 +912,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
+            "line" : 56,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg1, HashAlgorithm.crc16, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -935,8 +935,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
-            "column" : 168,
+            "line" : 56,
+            "column" : 169,
             "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
           }
         },
@@ -977,8 +977,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
-            "column" : 213,
+            "line" : 56,
+            "column" : 214,
             "source_fragment" : "meta.value_reg1 = meta.value_reg1 + 1"
           }
         },
@@ -1000,8 +1000,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 54,
-            "column" : 252,
+            "line" : 56,
+            "column" : 253,
             "source_fragment" : "reg1.write(meta.index_reg1, meta.value_reg1)"
           }
         },
@@ -1019,7 +1019,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
+            "line" : 61,
             "column" : 67,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -1038,7 +1038,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
+            "line" : 61,
             "column" : 85,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -1057,7 +1057,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
+            "line" : 61,
             "column" : 103,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -1076,7 +1076,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
+            "line" : 61,
             "column" : 120,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -1095,7 +1095,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
+            "line" : 61,
             "column" : 137,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -1122,7 +1122,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
+            "line" : 61,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg2, HashAlgorithm.identity, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -1145,8 +1145,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
-            "column" : 171,
+            "line" : 61,
+            "column" : 172,
             "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
           }
         },
@@ -1187,8 +1187,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
-            "column" : 216,
+            "line" : 61,
+            "column" : 217,
             "source_fragment" : "meta.value_reg2 = meta.value_reg2 + 1"
           }
         },
@@ -1210,8 +1210,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 55,
-            "column" : 255,
+            "line" : 61,
+            "column" : 256,
             "source_fragment" : "reg2.write(meta.index_reg2, meta.value_reg2)"
           }
         }
@@ -1240,7 +1240,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 59,
+            "line" : 68,
             "column" : 8,
             "source_fragment" : "reg0.read(meta.value_reg0, meta.index_reg0)"
           }
@@ -1263,7 +1263,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 60,
+            "line" : 69,
             "column" : 8,
             "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
           }
@@ -1286,7 +1286,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 61,
+            "line" : 70,
             "column" : 8,
             "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
           }
@@ -1318,7 +1318,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0xfffffffffffffffd"
+                            "value" : "0xfffffffffffe7960"
                           }
                         }
                       },
@@ -1342,7 +1342,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x0000000000000003"
+                        "value" : "0x00000000000186a0"
                       }
                     }
                   }
@@ -1378,7 +1378,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0xfffffffffffffffd"
+                            "value" : "0xfffffffffffe7960"
                           }
                         }
                       },
@@ -1402,7 +1402,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x0000000000000003"
+                        "value" : "0x00000000000186a0"
                       }
                     }
                   }
@@ -1438,7 +1438,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0xfffffffffffffffd"
+                            "value" : "0xfffffffffffe7960"
                           }
                         }
                       },
@@ -1462,7 +1462,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x0000000000000003"
+                        "value" : "0x00000000000186a0"
                       }
                     }
                   }
@@ -1489,7 +1489,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 71,
+            "line" : 80,
             "column" : 8,
             "source_fragment" : "reg0.write(meta.index_reg0, meta.value_reg0)"
           }
@@ -1512,7 +1512,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 72,
+            "line" : 81,
             "column" : 8,
             "source_fragment" : "reg1.write(meta.index_reg1, meta.value_reg1)"
           }
@@ -1535,7 +1535,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 73,
+            "line" : 82,
             "column" : 8,
             "source_fragment" : "reg2.write(meta.index_reg2, meta.value_reg2)"
           }
@@ -1777,7 +1777,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x0000000000000003"
+                        "value" : "0x0000000000000064"
                       }
                     }
                   }
@@ -1821,7 +1821,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000003"
+                            "value" : "0x0000000000000064"
                           }
                         }
                       },
@@ -1835,7 +1835,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000006"
+                            "value" : "0x00000000000000c8"
                           }
                         }
                       }
@@ -1881,7 +1881,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000006"
+                            "value" : "0x00000000000000c8"
                           }
                         }
                       },
@@ -1895,7 +1895,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000009"
+                            "value" : "0x000000000000012c"
                           }
                         }
                       }
@@ -1941,7 +1941,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000009"
+                            "value" : "0x000000000000012c"
                           }
                         }
                       },
@@ -1955,7 +1955,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x000000000000000c"
+                            "value" : "0x0000000000000190"
                           }
                         }
                       }
@@ -2001,7 +2001,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x000000000000000c"
+                            "value" : "0x0000000000000190"
                           }
                         }
                       },
@@ -2015,7 +2015,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x000000000000000f"
+                            "value" : "0x00000000000001f4"
                           }
                         }
                       }
@@ -2061,7 +2061,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x000000000000000f"
+                            "value" : "0x00000000000001f4"
                           }
                         }
                       },
@@ -2075,7 +2075,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000012"
+                            "value" : "0x0000000000000258"
                           }
                         }
                       }
@@ -2121,7 +2121,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000012"
+                            "value" : "0x0000000000000258"
                           }
                         }
                       },
@@ -2135,7 +2135,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000015"
+                            "value" : "0x00000000000002bc"
                           }
                         }
                       }
@@ -2181,7 +2181,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000015"
+                            "value" : "0x00000000000002bc"
                           }
                         }
                       },
@@ -2195,7 +2195,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0x0000000000000018"
+                            "value" : "0x0000000000000320"
                           }
                         }
                       }
@@ -2232,7 +2232,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 131,
+            "line" : 133,
             "column" : 8,
             "source_fragment" : "standard_metadata.egress_spec = egress_port"
           }
@@ -2240,7 +2240,7 @@
       ]
     },
     {
-      "name" : "approx_fair_queuing153",
+      "name" : "approx_fair_queuing154",
       "id" : 7,
       "runtime_data" : [],
       "primitives" : [
@@ -2252,21 +2252,21 @@
               "value" : ["standard_metadata", "priority"]
             },
             {
-              "type" : "hexstr",
-              "value" : "0x00"
+              "type" : "field",
+              "value" : ["scalars", "userMetadata.value_priority"]
             }
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 153,
+            "line" : 154,
             "column" : 12,
-            "source_fragment" : "standard_metadata.priority = (bit<3>) 0"
+            "source_fragment" : "standard_metadata.priority = meta.value_priority"
           }
         }
       ]
     },
     {
-      "name" : "approx_fair_queuing156",
+      "name" : "approx_fair_queuing158",
       "id" : 8,
       "runtime_data" : [],
       "primitives" : [
@@ -2280,7 +2280,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 156,
+            "line" : 158,
             "column" : 12,
             "source_fragment" : "mark_to_drop(standard_metadata)"
           }
@@ -2306,7 +2306,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
+            "line" : 178,
             "column" : 64,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -2325,7 +2325,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
+            "line" : 178,
             "column" : 82,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -2344,7 +2344,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
+            "line" : 178,
             "column" : 100,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -2363,7 +2363,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
+            "line" : 178,
             "column" : 117,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -2382,7 +2382,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
+            "line" : 178,
             "column" : 134,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -2409,7 +2409,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
+            "line" : 178,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg0, HashAlgorithm.crc32, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -2432,8 +2432,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
-            "column" : 168,
+            "line" : 178,
+            "column" : 169,
             "source_fragment" : "reg0.read(meta.value_reg0, meta.index_reg0)"
           }
         },
@@ -2474,8 +2474,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
-            "column" : 213,
+            "line" : 178,
+            "column" : 214,
             "source_fragment" : "meta.value_reg0 = meta.value_reg0 + 1"
           }
         },
@@ -2497,8 +2497,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 175,
-            "column" : 252,
+            "line" : 178,
+            "column" : 253,
             "source_fragment" : "reg0.write(meta.index_reg0, meta.value_reg0)"
           }
         },
@@ -2516,7 +2516,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
+            "line" : 183,
             "column" : 64,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -2535,7 +2535,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
+            "line" : 183,
             "column" : 82,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -2554,7 +2554,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
+            "line" : 183,
             "column" : 100,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -2573,7 +2573,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
+            "line" : 183,
             "column" : 117,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -2592,7 +2592,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
+            "line" : 183,
             "column" : 134,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -2619,7 +2619,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
+            "line" : 183,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg1, HashAlgorithm.crc16, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -2642,8 +2642,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
-            "column" : 168,
+            "line" : 183,
+            "column" : 169,
             "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
           }
         },
@@ -2684,8 +2684,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
-            "column" : 213,
+            "line" : 183,
+            "column" : 214,
             "source_fragment" : "meta.value_reg1 = meta.value_reg1 + 1"
           }
         },
@@ -2707,8 +2707,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 176,
-            "column" : 252,
+            "line" : 183,
+            "column" : 253,
             "source_fragment" : "reg1.write(meta.index_reg1, meta.value_reg1)"
           }
         },
@@ -2726,7 +2726,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
+            "line" : 188,
             "column" : 67,
             "source_fragment" : "hdr.ipv4.srcAddr"
           }
@@ -2745,7 +2745,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
+            "line" : 188,
             "column" : 85,
             "source_fragment" : "hdr.ipv4.dstAddr"
           }
@@ -2764,7 +2764,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
+            "line" : 188,
             "column" : 103,
             "source_fragment" : "hdr.tcp.srcPort"
           }
@@ -2783,7 +2783,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
+            "line" : 188,
             "column" : 120,
             "source_fragment" : "hdr.tcp.dstPort"
           }
@@ -2802,7 +2802,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
+            "line" : 188,
             "column" : 137,
             "source_fragment" : "hdr.ipv4.protocol"
           }
@@ -2829,7 +2829,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
+            "line" : 188,
             "column" : 8,
             "source_fragment" : "hash(meta.index_reg2, HashAlgorithm.identity, (bit<16>)0, {hdr.ipv4.srcAddr, hdr.ipv4.dstAddr, hdr.tcp.srcPort, hdr.tcp.dstPort, hdr.ipv4.protocol}, (bit<32>)100)"
           }
@@ -2852,8 +2852,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
-            "column" : 171,
+            "line" : 188,
+            "column" : 172,
             "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
           }
         },
@@ -2894,8 +2894,8 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
-            "column" : 216,
+            "line" : 188,
+            "column" : 217,
             "source_fragment" : "meta.value_reg2 = meta.value_reg2 + 1"
           }
         },
@@ -2917,15 +2917,15 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 177,
-            "column" : 255,
+            "line" : 188,
+            "column" : 256,
             "source_fragment" : "reg2.write(meta.index_reg2, meta.value_reg2)"
           }
         }
       ]
     },
     {
-      "name" : "MyEgress.reg_reset",
+      "name" : "MyEgress.dequeue_count",
       "id" : 10,
       "runtime_data" : [],
       "primitives" : [
@@ -2947,7 +2947,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 180,
+            "line" : 195,
             "column" : 8,
             "source_fragment" : "reg0.read(meta.value_reg0, meta.index_reg0)"
           }
@@ -2970,7 +2970,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 181,
+            "line" : 196,
             "column" : 8,
             "source_fragment" : "reg1.read(meta.value_reg1, meta.index_reg1)"
           }
@@ -2993,7 +2993,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 182,
+            "line" : 197,
             "column" : 8,
             "source_fragment" : "reg2.read(meta.value_reg2, meta.index_reg2)"
           }
@@ -3025,7 +3025,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0xfffffffffffffffd"
+                            "value" : "0xfffffffffffe7960"
                           }
                         }
                       },
@@ -3049,7 +3049,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x0000000000000003"
+                        "value" : "0x00000000000186a0"
                       }
                     }
                   }
@@ -3085,7 +3085,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0xfffffffffffffffd"
+                            "value" : "0xfffffffffffe7960"
                           }
                         }
                       },
@@ -3109,7 +3109,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x0000000000000003"
+                        "value" : "0x00000000000186a0"
                       }
                     }
                   }
@@ -3145,7 +3145,7 @@
                           },
                           "right" : {
                             "type" : "hexstr",
-                            "value" : "0xfffffffffffffffd"
+                            "value" : "0xfffffffffffe7960"
                           }
                         }
                       },
@@ -3169,7 +3169,7 @@
                       },
                       "right" : {
                         "type" : "hexstr",
-                        "value" : "0x0000000000000003"
+                        "value" : "0x00000000000186a0"
                       }
                     }
                   }
@@ -3196,7 +3196,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 192,
+            "line" : 207,
             "column" : 8,
             "source_fragment" : "reg0.write(meta.index_reg0, meta.value_reg0)"
           }
@@ -3219,7 +3219,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 193,
+            "line" : 208,
             "column" : 8,
             "source_fragment" : "reg1.write(meta.index_reg1, meta.value_reg1)"
           }
@@ -3242,7 +3242,7 @@
           ],
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 194,
+            "line" : 209,
             "column" : 8,
             "source_fragment" : "reg2.write(meta.index_reg2, meta.value_reg2)"
           }
@@ -3447,6 +3447,47 @@
           ]
         }
       ]
+    },
+    {
+      "name" : "approx_fair_queuing240",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "clone_egress_pkt_to_egress",
+          "parameters" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00000005"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 240,
+            "column" : 12,
+            "source_fragment" : "clone_preserving_field_list(CloneType.E2E, 5, 0)"
+          }
+        },
+        {
+          "op" : "recirculate",
+          "parameters" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 241,
+            "column" : 12,
+            "source_fragment" : "recirculate_preserving_field_list(0)"
+          }
+        }
+      ]
     }
   ],
   "pipelines" : [
@@ -3455,7 +3496,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "approx_fair_queuing.p4",
-        "line" : 40,
+        "line" : 36,
         "column" : 8,
         "source_fragment" : "MyIngress"
       },
@@ -3466,7 +3507,7 @@
           "id" : 0,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 149,
+            "line" : 151,
             "column" : 12,
             "source_fragment" : "sketch_count()"
           },
@@ -3495,7 +3536,7 @@
           "id" : 1,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 150,
+            "line" : 152,
             "column" : 12,
             "source_fragment" : "retrieve_min()"
           },
@@ -3524,7 +3565,7 @@
           "id" : 2,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 151,
+            "line" : 153,
             "column" : 12,
             "source_fragment" : "calculate_priority()"
           },
@@ -3537,9 +3578,9 @@
           "direct_meters" : null,
           "action_ids" : [5],
           "actions" : ["MyIngress.calculate_priority"],
-          "base_default_next" : "tbl_approx_fair_queuing153",
+          "base_default_next" : "tbl_approx_fair_queuing154",
           "next_tables" : {
-            "MyIngress.calculate_priority" : "tbl_approx_fair_queuing153"
+            "MyIngress.calculate_priority" : "tbl_approx_fair_queuing154"
           },
           "default_entry" : {
             "action_id" : 5,
@@ -3549,11 +3590,11 @@
           }
         },
         {
-          "name" : "tbl_approx_fair_queuing153",
+          "name" : "tbl_approx_fair_queuing154",
           "id" : 3,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 153,
+            "line" : 154,
             "column" : 39,
             "source_fragment" : "="
           },
@@ -3565,10 +3606,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [7],
-          "actions" : ["approx_fair_queuing153"],
+          "actions" : ["approx_fair_queuing154"],
           "base_default_next" : "MyIngress.forwarding",
           "next_tables" : {
-            "approx_fair_queuing153" : "MyIngress.forwarding"
+            "approx_fair_queuing154" : "MyIngress.forwarding"
           },
           "default_entry" : {
             "action_id" : 7,
@@ -3582,7 +3623,7 @@
           "id" : 4,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 155,
+            "line" : 157,
             "column" : 12,
             "source_fragment" : "dequeue_count()"
           },
@@ -3595,9 +3636,9 @@
           "direct_meters" : null,
           "action_ids" : [3],
           "actions" : ["MyIngress.dequeue_count"],
-          "base_default_next" : "tbl_approx_fair_queuing156",
+          "base_default_next" : "tbl_approx_fair_queuing158",
           "next_tables" : {
-            "MyIngress.dequeue_count" : "tbl_approx_fair_queuing156"
+            "MyIngress.dequeue_count" : "tbl_approx_fair_queuing158"
           },
           "default_entry" : {
             "action_id" : 3,
@@ -3607,11 +3648,11 @@
           }
         },
         {
-          "name" : "tbl_approx_fair_queuing156",
+          "name" : "tbl_approx_fair_queuing158",
           "id" : 5,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 156,
+            "line" : 158,
             "column" : 12,
             "source_fragment" : "mark_to_drop(standard_metadata)"
           },
@@ -3623,10 +3664,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [8],
-          "actions" : ["approx_fair_queuing156"],
+          "actions" : ["approx_fair_queuing158"],
           "base_default_next" : "MyIngress.forwarding",
           "next_tables" : {
-            "approx_fair_queuing156" : "MyIngress.forwarding"
+            "approx_fair_queuing158" : "MyIngress.forwarding"
           },
           "default_entry" : {
             "action_id" : 8,
@@ -3640,15 +3681,15 @@
           "id" : 6,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 134,
+            "line" : 136,
             "column" : 10,
             "source_fragment" : "forwarding"
           },
           "key" : [
             {
               "match_type" : "exact",
-              "name" : "standard_metadata.ingress_port",
-              "target" : ["standard_metadata", "ingress_port"],
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
               "mask" : null
             }
           ],
@@ -3681,7 +3722,7 @@
           "id" : 0,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 148,
+            "line" : 150,
             "column" : 12,
             "source_fragment" : "standard_metadata.instance_type != 4"
           },
@@ -3709,7 +3750,7 @@
       "id" : 1,
       "source_info" : {
         "filename" : "approx_fair_queuing.p4",
-        "line" : 166,
+        "line" : 168,
         "column" : 8,
         "source_fragment" : "MyEgress"
       },
@@ -3720,7 +3761,7 @@
           "id" : 7,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 220,
+            "line" : 235,
             "column" : 12,
             "source_fragment" : "sketch_count()"
           },
@@ -3749,7 +3790,7 @@
           "id" : 8,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 221,
+            "line" : 236,
             "column" : 12,
             "source_fragment" : "retrieve_min()"
           },
@@ -3774,13 +3815,42 @@
           }
         },
         {
-          "name" : "tbl_reg_reset",
+          "name" : "tbl_approx_fair_queuing240",
           "id" : 9,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 227,
+            "line" : 240,
             "column" : 12,
-            "source_fragment" : "reg_reset()"
+            "source_fragment" : "clone_preserving_field_list(CloneType.E2E, 5, 0); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["approx_fair_queuing240"],
+          "base_default_next" : "tbl_dequeue_count_0",
+          "next_tables" : {
+            "approx_fair_queuing240" : "tbl_dequeue_count_0"
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_dequeue_count_0",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "approx_fair_queuing.p4",
+            "line" : 242,
+            "column" : 12,
+            "source_fragment" : "dequeue_count()"
           },
           "key" : [],
           "match_type" : "exact",
@@ -3790,10 +3860,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [10],
-          "actions" : ["MyEgress.reg_reset"],
+          "actions" : ["MyEgress.dequeue_count"],
           "base_default_next" : null,
           "next_tables" : {
-            "MyEgress.reg_reset" : null
+            "MyEgress.dequeue_count" : null
           },
           "default_entry" : {
             "action_id" : 10,
@@ -3810,7 +3880,7 @@
           "id" : 1,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 219,
+            "line" : 233,
             "column" : 12,
             "source_fragment" : "standard_metadata.instance_type != 4 && standard_metadata.instance_type != 2"
           },
@@ -3856,9 +3926,9 @@
           "id" : 2,
           "source_info" : {
             "filename" : "approx_fair_queuing.p4",
-            "line" : 224,
+            "line" : 239,
             "column" : 12,
-            "source_fragment" : "meta.value_min >= 3"
+            "source_fragment" : "meta.value_min >= 100000"
           },
           "expression" : {
             "type" : "expression",
@@ -3870,12 +3940,12 @@
               },
               "right" : {
                 "type" : "hexstr",
-                "value" : "0x0000000000000003"
+                "value" : "0x00000000000186a0"
               }
             }
           },
           "false_next" : null,
-          "true_next" : "tbl_reg_reset"
+          "true_next" : "tbl_approx_fair_queuing240"
         }
       ]
     }
