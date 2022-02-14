@@ -1,4 +1,4 @@
-# Approximated Fair Queuing implemented on Bmv2 P4 switch  
+# Approximated Fair Queuing implemented on Bmv2
 
 This is simple implementation of Approximated Fair Queuing (NSDI' 18) on P4 v1model. 
 
