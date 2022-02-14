@@ -19,34 +19,35 @@ This repository aims to implement basic concepts of AFQ using count-min sketch a
 These are instructions you can follow to run.
 
 1. Clone the repository to local 
-'''
+```
 git clone https://github.com/keemeew/Approximated-Fair-Queuing
-'''
+```
 
 2. Compile approx_fair_queuing.p4 (Optional)
-'''
+```
 p4c --target bmv2 --arch v1model approx_fair_queuing.p4
-'''
+```
 
 3. Set up virtual nic interfaces
-'''
+```
 sudo bash veth_setup.sh
-'''
+```
 
 4. Run Bmv2 switch 
-'''
+```
 sudo simple_switch -i 0@veth0 -i 1@veth2 -i 2@veth4 --log-console --thrift-port 9090 approx_fair_queuing.json
-'''
+```
 * 'veth0-2' is used for input port, and 'veth4' is output port.
 
 5. Insert switch rule
-'''
+```
 sudo simple_switch_CLI --thrift-port 9090 < rule.txt
-'''
+```
 
 6. Send long flow and burst flow simultaneously
-''' 
+``` 
 sudo python3 send.py --dst "10.10.0.1"
+
 sudo python3 send.py --dst "10.10.0.2"
-'''
+```
 I recommend you to use terminal applications (e.g., terminator) which supports command broadcasting to run two different send.py commands simultaneously. Time to send long flow and burst flow is adjusted in python script. Please sniff 'veth4 using packet sniffing applications such as wireshark by yourself.
