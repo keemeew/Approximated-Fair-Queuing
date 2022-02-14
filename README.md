@@ -1,6 +1,7 @@
 # Approximated Fair Queuing implemented on Bmv2
 
-This is simple implementation of Approximated Fair Queuing (NSDI' 18) on P4 v1model. 
+This is simple implementation of "Approximated Fair Queuing (NSDI' 18)" on P4 v1model. 
+Paper link: https://www.usenix.org/system/files/conference/nsdi18/nsdi18-sharma.pdf
 
 ## Dependencies
 
