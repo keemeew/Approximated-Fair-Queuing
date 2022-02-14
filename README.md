@@ -47,7 +47,6 @@ sudo simple_switch_CLI --thrift-port 9090 < rule.txt
 6. Send long flow and burst flow simultaneously
 ``` 
 sudo python3 send.py --dst "10.10.0.1"
-
 sudo python3 send.py --dst "10.10.0.2"
 ```
-I recommend you to use terminal applications (e.g., terminator) which supports command broadcasting to run two different send.py commands simultaneously. Time to send long flow and burst flow is adjusted in python script. Please sniff 'veth4 using packet sniffing applications such as wireshark by yourself.
+I recommend you to use terminal applications (e.g., terminator) which supports command broadcasting to run two different send.py commands simultaneously. Timing to send long flow and burst flow is carefully adjusted in python script. By the way, please sniff 'veth4 using packet sniffing applications such as wireshark by yourself.
